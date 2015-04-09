@@ -1,0 +1,112 @@
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/usr/lib/hadoop/lib/slf4j-log4j12-1.7.5.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/lib/hive/lib/slf4j-log4j12-1.6.1.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
+Time taken: 1.149 seconds
+Time taken: 0.018 seconds
+Time taken: 0.0010 seconds
+Time taken: 0.0010 seconds
+Time taken: 0.0020 seconds
+Time taken: 0.0010 seconds
+AAAAAAAAAAEKBAAA	Mrs.	Jennifer	Jones	719	View 	Circle	Suite 0	Riverview	Logan County	IL	69003	United States	-6.0	single family	6584.5
+AAAAAAAAAAGMAAAA	Sir	Michael	Smith	412	Woodland South	Court	Suite X	Lincoln	Tazewell County	IL	61289	United States	-6.0	condo	2731.699951171875
+AAAAAAAAADBCAAAA	Ms.	Sheila	Pearson	949	Walnut Third	RD	Suite 480	Shiloh	Scott County	IL	69275	United States	-6.0	condo	1737.8900146484375
+AAAAAAAAAEBNAAAA	Sir	Felipe	Mccullough	267	13th Broadway	Ln	Suite 170	Plainview	Woodford County	IL	63683	United States	-6.0	single family	2193.2099609375
+AAAAAAAAAECJAAAA	Dr.	Marianne	Hudgins	967	Railroad 	Circle	Suite E	Walnut Grove	Vermilion County	IL	67752	United States	-6.0	single family	1665.6500244140625
+AAAAAAAAAEGEBAAA		Anne		32	Mill Jackson	Drive	Suite W	Clifton	Edgar County	IL	68014	United States	-6.0	apartment	2600.949951171875
+AAAAAAAAAFHHAAAA	Mr.	Michael	Salazar	761	Main 	Court	Suite 170	Mountain View	McLean County	IL	64466	United States	-6.0	condo	4902.14013671875
+AAAAAAAAAFKDAAAA	Mr.	Willie	Frank	249	5th 	Court	Suite 70	Woodville	Kankakee County	IL	64289	United States	-6.0	condo	2223.679931640625
+AAAAAAAAAFNHAAAA	Dr.	Ronald	Bridges	665	Ridge Center	Ave	Suite M	Oakwood	Monroe County	IL	60169	United States	-6.0	condo	2118.010009765625
+AAAAAAAAAHNHBAAA	Ms.	Amy	Goulet	7	Cedar 	Lane	Suite D	Wilson	Peoria County	IL	66971	United States	-6.0	condo	2048.22998046875
+AAAAAAAAAKPDBAAA	Mr.	Dannie	Krug	85	Dogwood Cherry	Boulevard	Suite 110	Saratoga	Clay County	IL	62123	United States	-6.0	single family	4724.7001953125
+AAAAAAAAAMJNBAAA	Mr.	Henry	Ward	440	Main Davis	Wy	Suite 210	Friendship	Edwards County	IL	64536	United States	-6.0	condo	3053.530029296875
+AAAAAAAAAOILBAAA	Miss	Candy	Carter	25	Willow Adams	Ln	Suite H	Centerville	Macon County	IL	60059	United States	-6.0	condo	1717.050048828125
+AAAAAAAAAOLBBAAA	Ms.	Betty	Mcgee	910	12th 5th	Way	Suite 70	Oak Hill	Lee County	IL	67838	United States	-6.0	apartment	10052.83984375
+AAAAAAAAAPMNBAAA	Miss	Deborah	Cosby	924	Laurel 	Way	Suite 0	Lebanon	Bond County	IL	62898	United States	-6.0	single family	10771.2900390625
+AAAAAAAABCFBAAAA	Sir	James	Mcelroy	706	11th 	Street	Suite G	Harmony	Massac County	IL	65804	United States	-6.0	single family	2662.9599609375
+AAAAAAAABDCFBAAA	Mr.	Ryan	Conners	406	Ridge 	Avenue	Suite P	Ryan	Boone County	IL	60525	United States	-6.0	condo	3218.25
+AAAAAAAABDKOBAAA	Dr.	James	Wolfe	127	Church 	Road	Suite K	Marion	Warren County	IL	60399	United States	-6.0	condo	2394.3701171875
+AAAAAAAABEPBBAAA	Dr.	Anita	Johnson	128	Madison 	Lane	Suite 60	Edgewood	Stephenson County	IL	60069	United States	-6.0	single family	3266.280029296875
+AAAAAAAABFEACAAA	Dr.	Willard	Lucas	321	Church 	Circle	Suite J	Arlington	Kendall County	IL	66557	United States	-6.0	single family	3179.080078125
+AAAAAAAABJKCBAAA	Ms.	Kerri	Wise	98	Miller 	Dr.	Suite W	Summit	Adams County	IL	60499	United States	-6.0	apartment	2118.169921875
+AAAAAAAABKDKAAAA	Mr.	Jarvis	Henley	413	Pine 	Drive	Suite 440	Liberty	Whiteside County	IL	63451	United States	-6.0	single family	8045.52001953125
+AAAAAAAABLCIBAAA	Mr.	Carlo	Casanova	975	Pine Second	Court	Suite 70	Brownsville	Piatt County	IL	69310	United States	-6.0	single family	3152.090087890625
+AAAAAAAABMGNAAAA	Mrs.	Martha	Davis	624	Valley 	Ave	Suite C	Hillcrest	Warren County	IL	63003	United States	-6.0	apartment	2303.25
+AAAAAAAABOHNAAAA	Dr.	Lola	Smith	614	Main Valley	Street	Suite 350	Bridgeport	Washington County	IL	65817	United States	-6.0	condo	1721.7099609375
+AAAAAAAABPEACAAA	Mrs.	Teresa	Wood	626	Franklin 2nd	Ave	Suite J	Highland	Winnebago County	IL	69454	United States	-6.0	single family	10101.580078125
+AAAAAAAACADNBAAA	Mr.	Frank	Burton	971	Oak 	Court	Suite 60	Summit	Pike County	IL	60499	United States	-6.0	apartment	1967.27001953125
+AAAAAAAACAGKBAAA	Miss	Marilyn	Garcia	596	Park Eigth	Wy	Suite 480	Deerfield	Jackson County	IL	69840	United States	-6.0	apartment	2371.39990234375
+AAAAAAAACBNOBAAA	Mrs.	Doris	Evans	317	Poplar 	Lane	Suite V	New Hope	Lake County	IL	69431	United States	-6.0	condo	3281.139892578125
+AAAAAAAACCBAAAAA	Mrs.	Florence	Caro	589	Walnut Franklin	Wy	Suite H	Lebanon	Washington County	IL	62898	United States	-6.0	condo	3076.919921875
+AAAAAAAACCEMBAAA	Dr.	Javier	Cunningham	207	Park Franklin	Blvd	Suite X	Mountain View	Jasper County	IL	64466	United States	-6.0	single family	1805.8800048828125
+AAAAAAAACCKAAAAA	Mr.	Richard	Holbrook	209	First 	Pkwy	Suite 160	Highland	Pike County	IL	69454	United States	-6.0	single family	7415.3701171875
+AAAAAAAACCKABAAA	Miss	Michele	Williams	830	Laurel 	Cir.	Suite 100	White Oak	DuPage County	IL	66668	United States	-6.0	single family	2183.929931640625
+AAAAAAAACEGDBAAA	Ms.	Gina	Frank	88	13th Cherry	Wy	Suite J	Woodland	Jackson County	IL	64854	United States	-6.0	single family	2045.4000244140625
+AAAAAAAACIBIBAAA	Dr.	Kelsie	Terry	828	Park 	Street	Suite A	Mountain View	Hancock County	IL	64466	United States	-6.0	condo	13663.6796875
+AAAAAAAACJAGAAAA	Dr.	Dave	Tribble	828	Second 	Ave	Suite 140	Thompsonville	Logan County	IL	69651	United States	-6.0	apartment	2492.0
+AAAAAAAACKFJAAAA	Miss	Helen	Mitchell	978	Wilson Jackson	Ave	Suite 270	Arlington	Shelby County	IL	66557	United States	-6.0	condo	2201.06005859375
+AAAAAAAACKKNBAAA	Dr.	Gina	Sturgill	105	1st Main	Avenue	Suite E	Jackson	Menard County	IL	69583	United States	-6.0	single family	4585.1201171875
+AAAAAAAACKNBAAAA	Sir	Laverne	Walters	60	Pine Willow	Circle	Suite J	Oak Ridge	Saline County	IL	68371	United States	-6.0	condo	3714.330078125
+AAAAAAAACLHJAAAA	Dr.	Milton	Morris		Fourteenth 				La Salle County	IL	60059	United States	NULL	condo	5146.39013671875
+AAAAAAAACLJHAAAA	Mr.	Robert	Lee	549	4th Lakeview	Boulevard	Suite N	Buena Vista	Gallatin County	IL	65752	United States	-6.0	condo	7140.7998046875
+AAAAAAAACLLEAAAA	Dr.	Guy	Hanna	837	Hickory 2nd	Way	Suite U	Bayview	Livingston County	IL	69672	United States	-6.0	apartment	1861.739990234375
+AAAAAAAACLLKBAAA	Sir	Michael	Williams	483	Forest 	Avenue	Suite E	Woodlawn	Coles County	IL	64098	United States	-6.0	single family	3089.93994140625
+AAAAAAAACMALAAAA	Dr.	Gary	Wolf	893	4th 	Cir.	Suite V	Farmington	Edwards County	IL	69145	United States	-6.0	single family	5017.6298828125
+AAAAAAAACMPOBAAA	Dr.	Daniel	Douglas	568	First 	Lane	Suite 290	Pine Grove	Macoupin County	IL	64593	United States	-6.0	apartment	4863.77001953125
+AAAAAAAACNEAAAAA	Mrs.	Darcy	Davenport	164	Franklin 	Court	Suite 170	Pleasant Hill	Brown County	IL	63604	United States	-6.0	apartment	5028.93994140625
+AAAAAAAACONPBAAA	Miss	Constance	Ryan	719	Jefferson 	Street	Suite 290	Summit	Morgan County	IL	60499	United States	-6.0	condo	3487.43994140625
+AAAAAAAADCLEAAAA	Dr.	William	Champion	32	Mill Jackson	Drive	Suite W	Clifton	Edgar County	IL	68014	United States	-6.0	apartment	1539.3399658203125
+AAAAAAAADDAJAAAA	Ms.	Tanya	Marcotte	18	3rd 	Court	Suite I	Green Acres	Jackson County	IL	67683	United States	-6.0	condo	1801.510009765625
+AAAAAAAADFCIAAAA	Mrs.	Amanda	Witherspoon	773	Lincoln Third	Ln	Suite 320	Buena Vista	Edwards County	IL	65752	United States	-6.0	single family	2197.22998046875
+AAAAAAAADICGAAAA	Sir	Richard	Miller	157	8th Pine	Way	Suite Q	Denmark	Ogle County	IL	65576	United States	-6.0	condo	2471.030029296875
+AAAAAAAADILKAAAA	Dr.	Alma	Swartz	681	Cherry 2nd	Ave	Suite B	Fairfield	Hancock County	IL	66192	United States	-6.0	apartment	3504.10009765625
+AAAAAAAADJMKBAAA	Dr.	Roger	Woods	581	Johnson East	Ln	Suite 380	Clifford	Johnson County	IL	68164	United States	-6.0	condo	2636.760009765625
+AAAAAAAADKENBAAA	Dr.	Virgilio	Aguilar	851	Davis 	Avenue	Suite U	Five Points	Wabash County	IL	66098	United States	-6.0	single family	2740.050048828125
+AAAAAAAADKNKAAAA	Ms.	Sara	Hutton	428	Pine 	Parkway	Suite 30	Spring Valley	Schuyler County	IL	66060	United States	-6.0	apartment	7713.3798828125
+AAAAAAAADLBACAAA	Mr.	William	Smith	659	Laurel South	Street	Suite A	Hazelwood	Knox County	IL	61206	United States	-6.0	condo	4763.10986328125
+AAAAAAAADMIFBAAA	Dr.	Russell	Boyer	516	Highland 	Lane	Suite V	Oakwood	Bond County	IL	60169	United States	-6.0	apartment	1648.3499755859375
+AAAAAAAADNDACAAA	Dr.	Hope	Brewster	437	Valley Adams	Street	Suite 20	Sulphur Springs	Lake County	IL	68354	United States	-6.0	apartment	2255.27001953125
+AAAAAAAAEBCJAAAA	Dr.	Winona	Ezell	920	Oak 	Dr.	Suite O	Riverside	Pulaski County	IL	69231	United States	-6.0	single family	3401.31005859375
+AAAAAAAAEBIABAAA	Dr.	Holly	Khan	97	Hill View	Way	Suite 270	Pleasant Valley	Kankakee County	IL	62477	United States	-6.0	condo	1766.0
+AAAAAAAAEFJJAAAA	Miss	Melinda	Taylor	499	8th 	Road	Suite 490	Shiloh	Adams County	IL	69275	United States	-6.0	apartment	1714.72998046875
+AAAAAAAAEFJJAAAA	Miss	Melinda	Taylor	499	8th 	Road	Suite 490	Shiloh	Adams County	IL	69275	United States	-6.0	apartment	9698.6904296875
+AAAAAAAAEFOLAAAA	Dr.	Lois	Soto	464	9th East	Ct.	Suite U	Concord	Calhoun County	IL	64107	United States	-6.0	single family	2321.580078125
+AAAAAAAAEGBBBAAA	Dr.	Arthur	Cooper	181	Third Mill	Lane	Suite D	Crossroads	Christian County	IL	60534	United States	-6.0	apartment	2630.1201171875
+AAAAAAAAEGKCBAAA	Sir	Edgar	Rickard	744	Cherry 	Ln	Suite T	Mount Pleasant	Knox County	IL	61933	United States	-6.0	single family	1808.6400146484375
+AAAAAAAAEGMGBAAA	Dr.	Richard	Hernandez	529	9th Washington	ST	Suite 400	Maple Grove	Adams County	IL	68252	United States	-6.0	apartment	1865.25
+AAAAAAAAEIDMBAAA	Mr.	Michael	Trinidad	695	Spring 	Wy	Suite S	Plainview	Jackson County	IL	63683	United States	-6.0	single family	4451.5498046875
+AAAAAAAAEKAOAAAA	Ms.	Judy	Hill	449	5th Smith	Road	Suite 330	Quincy	Macoupin County	IL	63868	United States	-6.0	apartment	2034.4599609375
+AAAAAAAAEKIBAAAA	Dr.	Julio	Simmons	222	Walnut 8th	Boulevard	Suite M	Cedar Grove	Macon County	IL	60411	United States	-6.0	apartment	7374.5
+AAAAAAAAEMNMAAAA	Mr.	John	Key	436	Spruce 1st	Court	Suite K	Oak Hill	Douglas County	IL	67838	United States	-6.0	apartment	2209.969970703125
+AAAAAAAAENGABAAA	Dr.	John	Mazza	256	Elm 	Ct.	Suite C	Shady Grove	Moultrie County	IL	62812	United States	-6.0	condo	2045.0
+AAAAAAAAEPPIAAAA	Dr.	Clayton	Broussard	192	Fourth 3rd	Avenue	Suite 280	Hamilton	Cook County	IL	62808	United States	-6.0	apartment	2803.530029296875
+AAAAAAAAFBMOBAAA	Miss	Melissa	Foley	940	Spruce 	Cir.	Suite 460	Bridgeport	Whiteside County	IL	65817	United States	-6.0	single family	2156.989990234375
+AAAAAAAAFDBNBAAA	Sir	Timothy	Castro	821	Twelfth 8th	Ave	Suite W	Kingston	Coles County	IL	64975	United States	-6.0	apartment	3082.300048828125
+AAAAAAAAFDFOBAAA	Miss	Rosa	Johnson	675	Lincoln Locust	Pkwy	Suite 230	Oakwood	Kendall County	IL	60169	United States	-6.0	condo	8852.2099609375
+AAAAAAAAFENEAAAA	Dr.		Martinez	242	Fourth 	Road	Suite 40	Jackson	Clark County	IL	69583	United States	-6.0	apartment	5160.58984375
+AAAAAAAAFEPFBAAA	Miss	Katrina	Smith	740		Ct.	Suite E			IL			NULL	apartment	1651.050048828125
+AAAAAAAAFJJBBAAA	Mrs.	Dorathy	Moore	15	Main 	Court	Suite U	Woodville	Coles County	IL	64289	United States	-6.0	apartment	1816.6300048828125
+AAAAAAAAFMHOBAAA	Ms.	Rachel	Lewis	898	1st 	Street	Suite K	Cedar Grove	Hancock County	IL	60411	United States	-6.0	condo	3314.030029296875
+AAAAAAAAFNFDBAAA			Walton	886	Pine 	Ave	Suite 420	Clearview	Bureau County	IL	65495	United States	-6.0	condo	6242.759765625
+AAAAAAAAFNNOAAAA	Dr.	Jimmy	Daniels	716	3rd Highland	Parkway	Suite H	Waterloo	Putnam County	IL	61675	United States	-6.0	condo	2855.2099609375
+AAAAAAAAFPNNAAAA	Mrs.	Martha	Sorensen	493	Fourth 	Road	Suite R	Franklin	White County	IL	69101	United States	-6.0	single family	3132.330078125
+AAAAAAAAFPNNAAAA	Mrs.	Martha	Sorensen	493	Fourth 	Road	Suite R	Franklin	White County	IL	69101	United States	-6.0	single family	11695.2900390625
+AAAAAAAAGECNBAAA	Dr.	John	Guy	594	Maple South	Pkwy	Suite 20	Oak Ridge	Grundy County	IL	68371	United States	-6.0	single family	1808.489990234375
+AAAAAAAAGELOBAAA	Dr.	Russell	Trudeau	638	Lake 	Blvd	Suite 390	Midway	Monroe County	IL	61904	United States	-6.0	single family	1958.010009765625
+AAAAAAAAGELOBAAA	Dr.	Russell	Trudeau	638	Lake 	Blvd	Suite 390	Midway	Monroe County	IL	61904	United States	-6.0	single family	4969.43994140625
+AAAAAAAAGHILAAAA	Ms.	Mercedes	Ramirez	621	1st Third	Avenue	Suite K	Midway	Logan County	IL	61904	United States	-6.0	single family	9219.2197265625
+AAAAAAAAGHOFBAAA	Ms.	Amada	Headley	310	Ridge View	Lane	Suite M	Riverdale	Washington County	IL	69391	United States	-6.0	apartment	2316.7900390625
+AAAAAAAAGIJEBAAA	Miss	Elizabeth	Hawes	230	Adams 	Parkway	Suite 420	Waterloo	Calhoun County	IL	61675	United States	-6.0	condo	2392.25
+AAAAAAAAGLJIBAAA	Ms.	Sandra	Kirk	234	Chestnut Seventh	RD	Suite W	Fairfield	McDonough County	IL	66192	United States	-6.0	condo	1961.8599853515625
+AAAAAAAAGNCFAAAA	Sir	Victor	Bradley	612	Lakeview Maple	Wy	Suite W	Glendale	Schuyler County	IL	63951	United States	-6.0	apartment	1936.8900146484375
+AAAAAAAAGOEGAAAA	Miss	Marilyn	Hoffman	587	Miller 	Street	Suite 300	Summit	Warren County	IL	60499	United States	-6.0	condo	2725.699951171875
+AAAAAAAAGOFMAAAA	Sir	Todd	Cox	797	3rd 	RD	Suite 70	Greenville	Wabash County	IL	61387	United States	-6.0	condo	1802.2900390625
+AAAAAAAAGOHJBAAA	Miss	Salina	Lloyd	92	Seventh Washington	Street	Suite 200	Shiloh	Jefferson County	IL	69275	United States	-6.0	apartment	12626.150390625
+AAAAAAAAGPJKAAAA	Mrs.	Eleanor	Cunningham	18	1st Lake	Boulevard	Suite L	Oak Grove	Pike County	IL	68370	United States	-6.0	single family	3138.239990234375
+AAAAAAAAHALDBAAA	Sir	Maynard	Corbett	116	Third 	Circle	Suite T	Oak Grove	De Witt County	IL	68370	United States	-6.0	apartment	2068.969970703125
+AAAAAAAAHBIDAAAA	Sir	Joseph	Valdez	145	Maple Elevnth	Pkwy	Suite S	Maple Grove	Schuyler County	IL	68252	United States	-6.0	apartment	3306.760009765625
+AAAAAAAAHCMPAAAA	Dr.	Suzanne	Williams	404	15th 	Dr.	Suite 250	Pine Grove	Coles County	IL	64593	United States	-6.0	condo	1979.9300537109375
+AAAAAAAAHHFBCAAA	Sir	Jeffery	Mcpherson	107	Park Second	Ln	Suite 360	Stringtown	Macon County	IL	60162	United States	-6.0	condo	1495.02001953125
+AAAAAAAAHIGJAAAA	Dr.	Charles	Ratliff	919	7th 	Circle	Suite 120	Union Hill	La Salle County	IL	67746	United States	-6.0	apartment	1970.47998046875
+Time taken: 17.644 seconds
