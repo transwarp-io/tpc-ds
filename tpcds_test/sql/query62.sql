@@ -1,5 +1,6 @@
+
 select
-  /*+MAPJOIN(warehouse,ship_mode,web_site,date_dim)*/
+  
    substr(w_warehouse_name,1,20) wwn
   ,sm_type
   ,web_name
@@ -12,8 +13,8 @@ select
                  (ws_ship_date_sk - ws_sold_date_sk <= 120) then 1 else 0 end)  as 91120days 
   ,sum(case when (ws_ship_date_sk - ws_sold_date_sk  > 120) then 1 else 0 end)  as 120days 
 from
-   web_sales
-  ,date_dim
+  date_dim
+  ,web_sales
   ,warehouse
   ,ship_mode
   ,web_site
@@ -28,7 +29,7 @@ group by
   ,sm_type
   ,web_name
 order by 
-      -- substr(w_warehouse_name,1,20)
+      
       wwn
       ,sm_type
       ,web_name

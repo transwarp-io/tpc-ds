@@ -1,5 +1,7 @@
+
+
      select 
-           /*+MAPJOIN(dt, item)*/
+           
              dt.d_year 
             ,item.i_brand_id brand_id 
             ,item.i_brand brand
@@ -18,4 +20,5 @@
              ,sum_agg desc
              ,brand_id
      limit 100
+
 

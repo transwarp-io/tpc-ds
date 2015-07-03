@@ -1,10 +1,15 @@
-select /*+ MAPJOIN(x, date_dim)*/
+
+
+
+select 
         i_item_id
        ,i_item_desc
        ,i_current_price
 from
-( select /*+ MAPJOIN(item)*/ i_item_sk,i_item_desc,i_current_price,i_item_id
-  from catalog_sales join item on cs_item_sk = i_item_sk where i_manufact_id in (678,964,918,849) 
+( select  i_item_sk,i_item_desc,i_current_price,i_item_id
+  from catalog_sales join item on cs_item_sk = i_item_sk where i_manufact_id in (678,964,918,849)
+  and i_current_price between 22 and 22 + 30
+group by i_item_sk,i_item_id,i_item_desc,i_current_price
 ) x
 join inventory on inv_item_sk = i_item_sk
 join date_dim  on d_date_sk=inv_date_sk

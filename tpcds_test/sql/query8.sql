@@ -1,8 +1,12 @@
-select /* +MAPJOIN(date_dim, store)*/ s_store_name
+
+
+select  s_store_name
       ,sum(ss_net_profit)
- from store_sales
-     ,date_dim
-     ,store,
+ from 
+     (select ss_store_sk,ss_net_profit from store_sales, date_dim
+        where ss_sold_date_sk = d_date_sk
+              and d_qoy = 1 and d_year = 2002) tmp_ss,
+     (select s_store_sk,s_store_name from store,
      (select ca_zip
      from (
       SELECT substr(ca_zip,1,5) ca_zip
@@ -88,6 +92,7 @@ select /* +MAPJOIN(date_dim, store)*/ s_store_name
                           '32322','14933','32936','33562','72550',
                           '27385','58049','58200','16808','21360',
                           '32961','18586','79307','15492')
+            group by ca_zip
      intersect
      select ca_zip
       from (SELECT substr(ca_zip,1,5) ca_zip,count(*) cnt
@@ -96,10 +101,10 @@ select /* +MAPJOIN(date_dim, store)*/ s_store_name
                   c_preferred_cust_flag='Y'
             group by ca_zip
             having count(*) > 10)A1)A2) V1
- where ss_store_sk = s_store_sk
-  and ss_sold_date_sk = d_date_sk
-  and d_qoy = 1 and d_year = 2002
-  and (substr(s_zip,1,2) = substr(V1.ca_zip,1,2))
- group by s_store_name
- order by s_store_name
- limit 100;
+     where substr(s_zip,1,2) = substr(V1.ca_zip,1,2) ) tmp_zip
+
+   where tmp_ss.ss_store_sk = tmp_zip.s_store_sk
+   group by s_store_name
+   order by s_store_name
+
+  limit 100;

@@ -1,4 +1,5 @@
-select /* +MAPJOIN(date_dim, call_center)*/ 
+
+select  
   count(distinct cs1.cs_order_number) as order_count
   ,sum(cs1.cs_ext_ship_cost) as total_shipping_cost
   ,sum(cs1.cs_net_profit) as total_net_profit

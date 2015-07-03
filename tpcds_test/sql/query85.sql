@@ -1,12 +1,15 @@
 
-select /*+ MAPJOIN(web_page,date_dim) */
+
+
+select 
       substr(r_reason_desc,1,20) as r, avg(ws_quantity) as wq, avg(wr_refunded_cash) ref, avg(wr_fee) as fee
  from web_sales
+ JOIN date_dim ON web_sales.ws_sold_date_sk = date_dim.d_date_sk
  JOIN 
  (  select
     x.*,ca_country,ca_state
     from
-    (  select /*+ MAPJOIN(reason,cd1,cd2) */
+    (  select 
        r_reason_desc,wr_refunded_cash,wr_fee,wr_refunded_addr_sk
        ,cd1.cd_marital_status as cd1_marital_status, cd2.cd_education_status as cd2_education_status
        ,cd2.cd_marital_status as cd2_marital_status, cd1.cd_education_status as cd1_education_status
@@ -19,7 +22,6 @@ select /*+ MAPJOIN(web_page,date_dim) */
     JOIN customer_address ON customer_address.ca_address_sk = x.wr_refunded_addr_sk
  ) y on  web_sales.ws_item_sk = y.wr_item_sk and web_sales.ws_order_number = y.wr_order_number
  JOIN web_page ON web_sales.ws_web_page_sk = web_page.wp_web_page_sk
- JOIN date_dim ON web_sales.ws_sold_date_sk = date_dim.d_date_sk
  where
    d_year = 1998
    and web_sales.ws_sold_date_sk between 2450815 and 2451179

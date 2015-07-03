@@ -1,12 +1,17 @@
+
+
+
+
+
 with year_total as (
- select /*+MAPJOIN(date_dim)*/ c_customer_id customer_id
+ select  c_customer_id customer_id
        ,c_first_name customer_first_name
        ,c_last_name customer_last_name
        ,d_year as year
        ,max(ss_net_paid) year_total
        ,'s' sale_type
- from store_sales
-     ,date_dim
+ from date_dim
+     ,store_sales
      ,customer
  where c_customer_sk = ss_customer_sk
    and ss_sold_date_sk = d_date_sk
@@ -16,14 +21,14 @@ with year_total as (
          ,c_last_name
          ,d_year
  union all
- select /*+MAPJOIN(date_dim)*/c_customer_id customer_id
+ select c_customer_id customer_id
        ,c_first_name customer_first_name
        ,c_last_name customer_last_name
        ,d_year as year
        ,max(ws_net_paid) year_total
        ,'w' sale_type
- from web_sales
-     ,date_dim
+ from date_dim
+      ,web_sales
      ,customer
  where c_customer_sk = ws_bill_customer_sk
    and ws_sold_date_sk = d_date_sk

@@ -1,6 +1,11 @@
-select /*+ MAPJOIN(customer_demographics, date_dim, store, item) */
+
+
+
+
+
+select 
         i_item_id,
-        s_state,
+        s_state, grouping(s_state) g_state,
         avg(ss_quantity) agg1,
         avg(ss_list_price) agg2,
         avg(ss_coupon_amt) agg3,
@@ -15,8 +20,9 @@ select /*+ MAPJOIN(customer_demographics, date_dim, store, item) */
        cd_marital_status = 'W' and
        cd_education_status = 'Primary' and
        d_year = 1998 and
-       s_state = 'TN'
- group by i_item_id, s_state
+       s_state in ('TN','TN', 'TN', 'TN', 'TN', 'TN') 
+
+ group by rollup (i_item_id, s_state)
  order by i_item_id
          ,s_state
  limit 100;

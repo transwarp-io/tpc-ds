@@ -1,10 +1,14 @@
-select /*+ MAPJOIN(store, customer_demographics, household_demographics, date_dim, customer_address) */
+
+
+
+
+select 
  avg(ss_quantity) ,avg(ss_ext_sales_price) ,avg(ss_ext_wholesale_cost) ,sum(ss_ext_wholesale_cost)
  from store_sales
+     JOIN date_dim ON store_sales.ss_sold_date_sk = date_dim.d_date_sk
      JOIN customer_demographics ON customer_demographics.cd_demo_sk = store_sales.ss_cdemo_sk
      JOIN customer_address ON store_sales.ss_addr_sk = customer_address.ca_address_sk
      JOIN household_demographics ON store_sales.ss_hdemo_sk=household_demographics.hd_demo_sk
-     JOIN date_dim ON store_sales.ss_sold_date_sk = date_dim.d_date_sk
      JOIN store ON store.s_store_sk = store_sales.ss_store_sk
  where
  d_year = 2001

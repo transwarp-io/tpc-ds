@@ -1,10 +1,10 @@
 
 select i_manufact_id,sum_sales,avg_quarterly_sales from 
 (
-  select /*+ MAPJOIN(item,date_dim,store)*/ i_manufact_id,
+  select  i_manufact_id,
   sum(ss_sales_price) sum_sales,
   avg(sum(ss_sales_price)) over (partition by i_manufact_id) avg_quarterly_sales
-  from item, store_sales, date_dim, store
+  from date_dim, store_sales, item, store
   where ss_item_sk = i_item_sk and
   ss_sold_date_sk = d_date_sk and
   ss_store_sk = s_store_sk

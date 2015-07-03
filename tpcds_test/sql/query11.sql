@@ -1,5 +1,8 @@
+
+
+
 with year_total as (
- select /*+ MAPJOIN(date_dim)*/ c_customer_id customer_id
+ select  c_customer_id customer_id
        ,c_first_name customer_first_name
        ,c_last_name customer_last_name
        ,c_preferred_cust_flag customer_preferred_cust_flag
@@ -14,6 +17,7 @@ with year_total as (
      ,customer
  where c_customer_sk = ss_customer_sk
    and ss_sold_date_sk = d_date_sk
+   and d_year in (2001, 2001 + 1)
  group by c_customer_id
          ,c_first_name
          ,c_last_name
@@ -23,7 +27,7 @@ with year_total as (
          ,c_email_address
          ,d_year
  union all
- select /*+ MAPJOIN(date_dim)*/ c_customer_id customer_id
+ select  c_customer_id customer_id
        ,c_first_name customer_first_name
        ,c_last_name customer_last_name
        ,c_preferred_cust_flag customer_preferred_cust_flag
@@ -38,6 +42,7 @@ with year_total as (
      ,customer
  where c_customer_sk = ws_bill_customer_sk
    and ws_sold_date_sk = d_date_sk
+   and d_year in (2001, 2001 + 1)
  group by c_customer_id
          ,c_first_name
          ,c_last_name
@@ -48,7 +53,7 @@ with year_total as (
          ,d_year
          )
  select  t_s_secyear.customer_preferred_cust_flag
- from 
+ from
       year_total t_s_firstyear
      ,year_total t_s_secyear
      ,year_total t_w_firstyear
@@ -70,3 +75,4 @@ with year_total as (
              > case when t_s_firstyear.sum_year_total > 0 then t_s_secyear.sum_year_total / t_s_firstyear.sum_year_total else null end
  order by t_s_secyear.customer_preferred_cust_flag
  limit 100;
+

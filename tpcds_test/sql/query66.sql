@@ -1,3 +1,9 @@
+
+
+
+
+
+
  select  
          w_warehouse_name
  	,w_warehouse_sq_ft
@@ -44,7 +50,7 @@
  	,sum(nov_net) as nov_net
  	,sum(dec_net) as dec_net
  from (
-    select /*+ MAPJOIN(warehouse,date_dim,time_dim,ship_mode)*/
+    select 
  	w_warehouse_name
  	,w_warehouse_sq_ft
  	,w_city
@@ -103,10 +109,10 @@
  		then ws_net_paid_inc_tax * ws_quantity else 0.0BD end) as dec_net
      from
           web_sales
-         ,warehouse
          ,date_dim
          ,time_dim
  	  ,ship_mode
+         ,warehouse
      where
             ws_warehouse_sk =  w_warehouse_sk
         and ws_sold_date_sk = d_date_sk
@@ -124,7 +130,7 @@
  	,w_country
        ,d_year
  union all
-    select /*+ MAPJOIN(warehouse,date_dim,time_dim,ship_mode)*/
+    select 
  	w_warehouse_name
  	,w_warehouse_sq_ft
  	,w_city
@@ -183,10 +189,10 @@
  		then cs_net_paid_inc_ship_tax * cs_quantity else 0.0BD end) as dec_net
      from
           catalog_sales
-         ,warehouse
+ 	 ,ship_mode
          ,date_dim
          ,time_dim
- 	 ,ship_mode
+         ,warehouse
      where
             cs_warehouse_sk =  w_warehouse_sk
         and cs_sold_date_sk = d_date_sk

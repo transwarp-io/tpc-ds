@@ -1,5 +1,6 @@
+
 with ssales as
-(select /*+MAPJOIN(store,item)*/ c_last_name
+(select  c_last_name
       ,c_first_name
       ,s_store_name
       ,ca_state

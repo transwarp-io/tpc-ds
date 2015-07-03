@@ -6,7 +6,7 @@ WITH all_sales AS (
        ,i_manufact_id
        ,SUM(sales_cnt) AS sales_cnt
        ,SUM(sales_amt) AS sales_amt
- FROM (SELECT /*+MAPJOIN(date_dim,item)*/ d_year
+ FROM (SELECT  d_year
              ,i_brand_id
              ,i_class_id
              ,i_category_id
@@ -19,7 +19,7 @@ WITH all_sales AS (
                                                     AND cs_item_sk=cr_item_sk)
        WHERE i_category='Sports'
        UNION
-       SELECT /*+MAPJOIN(date_dim,item)*/ d_year
+       SELECT  d_year
              ,i_brand_id
              ,i_class_id
              ,i_category_id
@@ -32,7 +32,7 @@ WITH all_sales AS (
                                                 AND ss_item_sk=sr_item_sk)
        WHERE i_category='Sports'
        UNION
-       SELECT /*+MAPJOIN(date_dim,item)*/ d_year
+       SELECT  d_year
              ,i_brand_id
              ,i_class_id
              ,i_category_id
@@ -43,7 +43,9 @@ WITH all_sales AS (
                       JOIN date_dim ON d_date_sk=ws_sold_date_sk
                       LEFT JOIN web_returns ON (ws_order_number=wr_order_number 
                                             AND ws_item_sk=wr_item_sk)
-       WHERE i_category='Sports') sales_detail
+       WHERE i_category='Sports'
+		) sales_detail
+ WHERE d_year in (2002-1, 2002)
  GROUP BY d_year, i_brand_id, i_class_id, i_category_id, i_manufact_id)
 SELECT  prev_yr.d_year AS prev_year
                           ,curr_yr.d_year AS year
