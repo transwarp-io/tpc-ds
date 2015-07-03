@@ -1,5 +1,9 @@
+
+
+
+
 with year_total as (
- select /*+ MAPJOIN(date_dim)*/ c_customer_id customer_id
+ select  c_customer_id customer_id
        ,c_first_name customer_first_name
        ,c_last_name customer_last_name
        ,c_preferred_cust_flag customer_preferred_cust_flag
@@ -14,6 +18,7 @@ with year_total as (
         ,customer
    where c_customer_sk = ss_customer_sk
      and ss_sold_date_sk = d_date_sk
+      and d_year in (2001, 2001 + 1)
    group by c_customer_id
          ,c_first_name
          ,c_last_name
@@ -23,7 +28,7 @@ with year_total as (
          ,c_email_address
          ,d_year
  union all
- select /*+ MAPJOIN(date_dim)*/ c_customer_id customer_id
+ select  c_customer_id customer_id
        ,c_first_name customer_first_name
        ,c_last_name customer_last_name
        ,c_preferred_cust_flag customer_preferred_cust_flag
@@ -38,6 +43,7 @@ with year_total as (
        ,customer
    where c_customer_sk = cs_bill_customer_sk
          and cs_sold_date_sk = d_date_sk
+      and d_year in (2001, 2001 + 1)
    group by c_customer_id
          ,c_first_name
          ,c_last_name
@@ -47,7 +53,7 @@ with year_total as (
          ,c_email_address
          ,d_year
  union all
- select /*+ MAPJOIN(date_dim)*/ c_customer_id customer_id
+ select  c_customer_id customer_id
        ,c_first_name customer_first_name
        ,c_last_name customer_last_name
        ,c_preferred_cust_flag customer_preferred_cust_flag
@@ -62,6 +68,7 @@ with year_total as (
      ,customer
    where c_customer_sk = ws_bill_customer_sk
       and ws_sold_date_sk = d_date_sk
+      and d_year in (2001, 2001 + 1)
    group by c_customer_id
          ,c_first_name
          ,c_last_name

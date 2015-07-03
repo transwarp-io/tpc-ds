@@ -1,4 +1,4 @@
-select /*+ MAPJOIN(dt,item)*/ dt.d_year
+select  dt.d_year
  	,item.i_category_id
  	,item.i_category
  	,sum(ss_ext_sales_price) as sssp
@@ -16,4 +16,5 @@ select /*+ MAPJOIN(dt,item)*/ dt.d_year
  order by       sssp desc,dt.d_year
  		,item.i_category_id
  		,item.i_category
+
  limit 100 ;

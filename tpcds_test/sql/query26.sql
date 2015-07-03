@@ -1,4 +1,8 @@
-select /*+ MAPJOIN(customer_demographics, date_dim, item, promotion,customer_demographics) */
+
+
+
+
+select 
         i_item_id, 
         avg(cs_quantity) agg1,
         avg(cs_list_price) agg2,
@@ -7,8 +11,8 @@ select /*+ MAPJOIN(customer_demographics, date_dim, item, promotion,customer_dem
  from catalog_sales
       JOIN date_dim ON catalog_sales.cs_sold_date_sk = date_dim.d_date_sk
       JOIN customer_demographics ON catalog_sales.cs_bill_cdemo_sk = customer_demographics.cd_demo_sk
-      JOIN item ON catalog_sales.cs_item_sk = item.i_item_sk
       JOIN promotion ON catalog_sales.cs_promo_sk = promotion.p_promo_sk
+      JOIN item ON catalog_sales.cs_item_sk = item.i_item_sk
  where 
        cd_gender = 'F' and 
        cd_marital_status = 'W' and

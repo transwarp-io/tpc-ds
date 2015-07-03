@@ -1,4 +1,8 @@
-select /*+MAPJOIN(d1, item, store)*/ 
+
+
+
+
+select  
     sum(ss_net_profit)/sum(ss_ext_sales_price) as gross_margin
    ,i_category
    ,i_class
@@ -10,8 +14,8 @@ select /*+MAPJOIN(d1, item, store)*/
  from
     store_sales
    ,date_dim       d1
-   ,item
    ,store
+   ,item
  where
     d1.d_year = 2000 
  and d1.d_date_sk = ss_sold_date_sk

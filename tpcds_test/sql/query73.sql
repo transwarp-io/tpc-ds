@@ -1,12 +1,15 @@
-select  /*+ MAPJOIN(dj)*/ c_last_name
+
+
+
+select   c_last_name
        ,c_first_name
        ,c_salutation
        ,c_preferred_cust_flag 
        ,ss_ticket_number
        ,cnt from
- (select /*+ MAPJOIN(date_dim,store,household_demographics)*/ ss_ticket_number
+ (select  ss_ticket_number
           ,ss_customer_sk, count(*) cnt
-    from store_sales,date_dim,store,household_demographics
+    from date_dim,store,household_demographics, store_sales
     where store_sales.ss_sold_date_sk = date_dim.d_date_sk
     and store_sales.ss_store_sk = store.s_store_sk  
     and store_sales.ss_hdemo_sk = household_demographics.hd_demo_sk

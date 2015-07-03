@@ -1,11 +1,13 @@
 
-select /*+ MAPJOIN(store, customer_demographics, date_dim, customer_address) */
+
+
+select 
        sum (ss_quantity)
  from store_sales
- JOIN store ON store.s_store_sk = store_sales.ss_store_sk
- JOIN customer_demographics ON customer_demographics.cd_demo_sk = store_sales.ss_cdemo_sk
- JOIN customer_address ON store_sales.ss_addr_sk = customer_address.ca_address_sk
  JOIN date_dim ON store_sales.ss_sold_date_sk = date_dim.d_date_sk
+ JOIN customer_demographics ON customer_demographics.cd_demo_sk = store_sales.ss_cdemo_sk
+ JOIN store ON store.s_store_sk = store_sales.ss_store_sk
+ JOIN customer_address ON store_sales.ss_addr_sk = customer_address.ca_address_sk
  where
  d_year = 1998
  and  

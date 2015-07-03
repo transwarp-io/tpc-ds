@@ -1,44 +1,43 @@
+
+
 with ss_items as
- (select /*+MAPJOIN(date_dim,item)*/ i_item_id item_id
+ (select  i_item_id item_id
         ,sum(ss_ext_sales_price) ss_item_rev 
- from store_sales
-     ,date_dim
+ from (select ss_item_sk, ss_ext_sales_price from store_sales
+     ,(select d_date_sk from date_dim
+                  where d_date in (select d_date
+                  from date_dim
+                  where d_week_seq = (select d_week_seq
+                                      from date_dim
+                                      where d_date = '1998-02-19'))) ssd where ss_sold_date_sk = d_date_sk) sss
      ,item
  where ss_item_sk = i_item_sk
-   and d_date in (select d_date
-                  from date_dim
-                  where d_week_seq = (select d_week_seq 
-                                      from date_dim
-                                      where d_date = '1998-02-19'))
-   and ss_sold_date_sk   = d_date_sk
  group by i_item_id),
 with cs_items as
- (select /*+MAPJOIN(date_dim,item)*/ i_item_id item_id
+ (select  i_item_id item_id
         ,sum(cs_ext_sales_price) cs_item_rev
-  from catalog_sales
-      ,date_dim
+  from (select cs_item_sk, cs_ext_sales_price from catalog_sales
+      ,(select d_date_sk from date_dim
+                  where d_date in (select d_date
+                  from date_dim
+                  where d_week_seq = (select d_week_seq
+                                      from date_dim
+                                      where d_date = '1998-02-19'))) csd where cs_sold_date_sk = d_date_sk) css
       ,item
  where cs_item_sk = i_item_sk
-  and  d_date in (select d_date
-                  from date_dim
-                  where d_week_seq = (select d_week_seq 
-                                      from date_dim
-                                      where d_date = '1998-02-19'))
-  and  cs_sold_date_sk = d_date_sk
  group by i_item_id),
 with ws_items as
- (select /*+MAPJOIN(date_dim,item)*/i_item_id item_id
+ (select i_item_id item_id
         ,sum(ws_ext_sales_price) ws_item_rev
-  from web_sales
-      ,date_dim
-      ,item
- where ws_item_sk = i_item_sk
-  and  d_date in (select d_date
+  from (select ws_item_sk, ws_ext_sales_price from web_sales
+      ,(select d_date_sk from date_dim
+                  where d_date in (select d_date
                   from date_dim
-                  where d_week_seq =(select d_week_seq 
-                                     from date_dim
-                                     where d_date = '1998-02-19'))
-  and ws_sold_date_sk   = d_date_sk
+                  where d_week_seq = (select d_week_seq
+                                      from date_dim
+                                      where d_date = '1998-02-19'))) wsd where ws_sold_date_sk = d_date_sk) wss
+      ,item
+  where ws_item_sk = i_item_sk
  group by i_item_id)
 select  ss_items.item_id
        ,ss_item_rev

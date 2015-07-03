@@ -1,4 +1,9 @@
- select /*+MAPJOIN(date_dim, item)*/
+
+
+
+
+
+ select 
         i_item_desc 
        ,i_category 
        ,i_class
@@ -26,3 +31,5 @@
          ,i_item_desc
          ,revenueratio
  limit 100;
+
+

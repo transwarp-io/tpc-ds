@@ -1,5 +1,11 @@
+
+
+
+
+
+
 with t as (
-    select /*+MAPJOIN(customer_demographics, customer_address, household_demographics)*/ 
+    select  
         cd_marital_status
        ,cd_education_status
        ,c_customer_sk
@@ -16,8 +22,9 @@ with t as (
        or(cd_marital_status = 'W' and cd_education_status = 'Advanced Degree'))
     and hd_buy_potential like '0-500%' )
 
+
 select
-        /*+MAPJOIN(t, call_center, date_dim)*/
+        
         cc_call_center_id Call_Center,
         cc_name Call_Center_Name,
         cc_manager Manager,
@@ -34,3 +41,42 @@ and     d_moy  = 11
 group by cc_call_center_id,cc_name,cc_manager,cd_marital_status,cd_education_status
 order by Returns_Loss desc
 limit 100
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

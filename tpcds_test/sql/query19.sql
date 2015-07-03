@@ -1,10 +1,16 @@
+
+
+
+
+
+
 select
 i_brand_id, i_brand, i_manufact_id, i_manufact, sum(ss_ext_sales_price) ext_price
 from customer_address,
 ( select
   ss_customer_sk, ss_ext_sales_price, i_brand, i_brand_id, i_manufact_id, i_manufact, c_current_addr_sk, s_zip 
   from customer,
-  ( select /*+MAPJOIN(date_dim,item,store)*/
+  ( select 
     ss_customer_sk, ss_ext_sales_price, i_brand, i_brand_id, i_manufact_id, i_manufact, s_zip
     from date_dim
        , store_sales

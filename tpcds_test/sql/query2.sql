@@ -9,7 +9,7 @@ with wscs as
               ,cs_ext_sales_price sales_price
         from catalog_sales) x),
 with wswscs as
- (select /*+MAPJOIN(date_dim)*/ d_week_seq,
+ (select  d_week_seq,
         sum(case when (d_day_name='Sunday') then sales_price else null end) sun_sales,
         sum(case when (d_day_name='Monday') then sales_price else null end) mon_sales,
         sum(case when (d_day_name='Tuesday') then sales_price else  null end) tue_sales,
@@ -30,7 +30,7 @@ select d_week_seq1
        ,round(fri_sales1/fri_sales2,2)
        ,round(sat_sales1/sat_sales2,2)
 from
-   (select /*+MAPJOIN(date_dim)*/ wswscs.d_week_seq d_week_seq1
+   (select  wswscs.d_week_seq d_week_seq1
           ,sun_sales sun_sales1
           ,mon_sales mon_sales1
           ,tue_sales tue_sales1
@@ -41,7 +41,7 @@ from
     from wswscs,date_dim
     where date_dim.d_week_seq = wswscs.d_week_seq and
           d_year = 2001) y,
-   (select /*+MAPJOIN(date_dim)*/ wswscs.d_week_seq d_week_seq2
+   (select  wswscs.d_week_seq d_week_seq2
           ,sun_sales sun_sales2
           ,mon_sales mon_sales2
           ,tue_sales tue_sales2
@@ -56,4 +56,4 @@ from
 where d_week_seq1=d_week_seq2-53
 order by d_week_seq1;
 
--- end query 1 in stream 0 using template query2.tpl
+

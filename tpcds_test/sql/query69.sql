@@ -1,4 +1,5 @@
-  select
+  
+select
     cd_gender,
     cd_marital_status,
     cd_education_status,
@@ -14,7 +15,7 @@
     ca_state in ('CO','IL','MN') and
     cd_demo_sk = c.c_current_cdemo_sk and 
     exists (select 1
-           from store_sales,date_dim
+           from date_dim,store_sales
            where c.c_customer_sk = ss_customer_sk and
                  ss_sold_date_sk = d_date_sk and
                  d_year = 1999 and

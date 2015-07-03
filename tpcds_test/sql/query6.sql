@@ -1,3 +1,5 @@
+
+
 select  a.ca_state state, count(*) cnt
  from customer c
      ,store_sales s
@@ -21,3 +23,4 @@ select  a.ca_state state, count(*) cnt
  having count(*) >= 10
  order by cnt 
  limit 100;
+

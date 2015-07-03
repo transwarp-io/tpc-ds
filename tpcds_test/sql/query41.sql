@@ -1,12 +1,7 @@
 
-select  distinct(i_product_name)
- from item i1
- where exists ( 
-          select count(*) as item_cnt
-          from item t
-          where
-          t.i_manufact = i1.i_manufact 
-          and
+with subq as 
+(
+select i_manufact from item t where 
           (
               ( t.i_category = 'Women' and
                  (t.i_color = 'orchid' or t.i_color = 'papaya') and
@@ -50,6 +45,14 @@ select  distinct(i_product_name)
                 (t.i_size = 'petite' or t.i_size = 'medium')
               )
            )
+)
+select  distinct(i_product_name)
+ from item i1
+ where exists ( 
+          select count(*) as item_cnt
+          from subq tt
+          where
+          tt.i_manufact = i1.i_manufact 
   )
  and i_manufact_id between 742 and 742+40
  order by i_product_name

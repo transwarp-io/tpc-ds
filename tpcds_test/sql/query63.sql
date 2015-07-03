@@ -1,10 +1,11 @@
 
 select  * 
-from (select /*+ MAPJOIN(item,date_dim,store)*/ i_manager_id
+from (select  i_manager_id
              ,sum(ss_sales_price) sum_sales
              ,avg(sum(ss_sales_price)) over (partition by i_manager_id) avg_monthly_sales
-      from store_sales
-          ,date_dim
+      from
+          date_dim
+	  ,store_sales
           ,item
           ,store
       where ss_item_sk = i_item_sk

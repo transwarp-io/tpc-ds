@@ -1,4 +1,4 @@
-select /*+ MAPJOIN(date_dim,store)*/  s_store_name, s_store_id,
+select   s_store_name, s_store_id,
         sum(case when (d_day_name='Sunday') then ss_sales_price else null end) sun_sales,
         sum(case when (d_day_name='Monday') then ss_sales_price else null end) mon_sales,
         sum(case when (d_day_name='Tuesday') then ss_sales_price else  null end) tue_sales,

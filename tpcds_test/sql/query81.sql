@@ -1,5 +1,8 @@
+
+
+
 with customer_total_return as(
- select /*+MAPJOIN(date_dim)*/ cr_returning_customer_sk as ctr_customer_sk
+ select  cr_returning_customer_sk as ctr_customer_sk
         ,ca_state as ctr_state,
  	sum(cr_return_amt_inc_tax) as ctr_total_return
  from catalog_returns

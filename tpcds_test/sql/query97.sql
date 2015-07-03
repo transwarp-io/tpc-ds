@@ -1,5 +1,6 @@
+
 with ssci as (
-select /*+MAPJOIN(date_dim)*/ ss_customer_sk customer_sk
+select  ss_customer_sk customer_sk
       ,ss_item_sk item_sk
 from store_sales,date_dim
 where ss_sold_date_sk = d_date_sk
@@ -7,7 +8,7 @@ where ss_sold_date_sk = d_date_sk
 group by ss_customer_sk
         ,ss_item_sk),
 with csci as(
- select /*+MAPJOIN(date_dim)*/ cs_bill_customer_sk customer_sk
+ select  cs_bill_customer_sk customer_sk
       ,cs_item_sk item_sk
 from catalog_sales,date_dim
 where cs_sold_date_sk = d_date_sk

@@ -1,7 +1,9 @@
 
+
+
 with t as (
 select
-       /*+MAPJOIN(item, date_dim)*/
+       
         i_item_id
        ,i_item_desc
        ,i_current_price
@@ -18,7 +20,7 @@ and    inv_quantity_on_hand between 100 and 500)
 
 
 select 
-       /*+MAPJOIN(t)*/
+       
         i_item_id
        ,i_item_desc
        ,i_current_price
@@ -29,3 +31,6 @@ on     ss_item_sk = i_item_sk
 group by i_item_id,i_item_desc,i_current_price
 order by i_item_id
 limit 100
+
+
+

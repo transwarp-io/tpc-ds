@@ -1,5 +1,11 @@
+
+
+
+
+
+
 with ss as (
-select /*+MAPJOIN(date_dim, item)*/ 
+select  
           i_manufact_id,sum(ss_ext_sales_price) total_sales
  from
  	store_sales,
@@ -19,7 +25,7 @@ select /*+MAPJOIN(date_dim, item)*/
  and     ca_gmt_offset           = -5
  group by i_manufact_id),
 with cs as (
- select /*+MAPJOIN(date_dim, item)*/ 
+ select  
           i_manufact_id,sum(cs_ext_sales_price) total_sales
  from
  	catalog_sales,
@@ -39,7 +45,7 @@ with cs as (
  and     ca_gmt_offset           = -5
  group by i_manufact_id),
 with ws as (
- select /*+MAPJOIN(date_dim, item)*/ 
+ select  
           i_manufact_id,sum(ws_ext_sales_price) total_sales
  from
  	web_sales,

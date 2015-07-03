@@ -1,5 +1,8 @@
+
+
+
 select 
-      /*+ MAPJOIN(item, date_dim)*/
+      
        i_item_desc
       ,i_category
       ,i_item_id
@@ -31,4 +34,5 @@ order by
         ,i_item_desc
         ,revenueratio
 limit 100
+
 

@@ -1,5 +1,9 @@
+
+
+
+
 with frequent_ss_items as 
- (select /*+MAPJOIN(date_dim,item)*/ substr(i_item_desc,1,30) itemdesc,i_item_sk item_sk,d_date solddate,count(*) cnt
+ (select  substr(i_item_desc,1,30) itemdesc,i_item_sk item_sk,d_date solddate,count(*) cnt
   from store_sales
       ,date_dim 
       ,item
@@ -7,12 +11,12 @@ with frequent_ss_items as
     and ss_item_sk = i_item_sk 
     and d_year in (1999,1999+1,1999+2,1999+3)
   group by substr(i_item_desc,1,30),i_item_sk,d_date
---  group by itemdesc,i_item_sk,d_date
+
   having count(*) >4),
 
 with max_store_sales as
  (select max(csales) tpcds_cmax 
-  from (select /*+MAPJOIN(date_dim)*/ c_customer_sk,sum(ss_quantity*ss_sales_price) csales
+  from (select  c_customer_sk,sum(ss_quantity*ss_sales_price) csales
         from store_sales
             ,date_dim 
             ,customer
@@ -31,7 +35,7 @@ with best_ss_customer as
   having sum(ss_quantity*ss_sales_price) > (95/100.0) * tpcds_cmax
  )
 select  sum(sales)
- from ( select  /*+MAPJOIN(date_dim)*/ cs_quantity*cs_list_price sales
+ from ( select   cs_quantity*cs_list_price sales
         from catalog_sales
            ,date_dim 
         where d_year = 1999 
@@ -40,7 +44,7 @@ select  sum(sales)
          and cs_item_sk in (select item_sk from frequent_ss_items)
          and cs_bill_customer_sk in (select c_customer_sk from best_ss_customer)
       union all
-      select  /*+MAPJOIN(date_dim)*/ ws_quantity*ws_list_price sales
+      select   ws_quantity*ws_list_price sales
        from web_sales 
            ,date_dim 
        where d_year = 1999 

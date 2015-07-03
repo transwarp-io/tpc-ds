@@ -1,5 +1,10 @@
+
+
+
+
+
 with ss as
-(select /*+ MAPJOIN(date_dim,store)*/ s_store_sk,
+(select  s_store_sk,
          sum(ss_ext_sales_price) as sales,
          sum(ss_net_profit) as profit
  from store_sales,
@@ -12,7 +17,7 @@ with ss as
  group by s_store_sk),
 
 with sr as
-(select /*+ MAPJOIN(date_dim,store)*/ s_store_sk,
+(select  s_store_sk,
          sum(sr_return_amt) as returns,
          sum(sr_net_loss) as profit_loss
  from store_returns,
@@ -25,7 +30,7 @@ with sr as
  group by s_store_sk),
 
 with cs as
- (select /*+ MAPJOIN(date_dim)*/ cs_call_center_sk,
+ (select  cs_call_center_sk,
         sum(cs_ext_sales_price) as sales,
         sum(cs_net_profit) as profit
  from catalog_sales,
@@ -37,7 +42,7 @@ with cs as
  ),
 
 with cr as
- (select /*+ MAPJOIN(date_dim)*/
+ (select 
         sum(cr_return_amount) as returns,
         sum(cr_net_loss) as profit_loss
  from catalog_returns,
@@ -48,7 +53,7 @@ with cr as
  ),
 
 with ws as
- ( select /*+ MAPJOIN(date_dim,web_page)*/ wp_web_page_sk,
+ ( select  wp_web_page_sk,
         sum(ws_ext_sales_price) as sales,
         sum(ws_net_profit) as profit
  from web_sales,
@@ -61,7 +66,7 @@ with ws as
  group by wp_web_page_sk),
 
 with wr as
- (select /*+ MAPJOIN(date_dim,web_page)*/ wp_web_page_sk,
+ (select  wp_web_page_sk,
         sum(wr_return_amt) as returns,
         sum(wr_net_loss) as profit_loss
  from web_returns,
@@ -78,7 +83,7 @@ select  channel
         , sum(returns) as returns
         , sum(profit) as profit
 from
- (select /*+MAPJOIN(sr)*/'store channel' as channel
+ (select 'store channel' as channel
         , ss.s_store_sk as id
         , sales
         , coalesce(returns, 0) as returns
@@ -92,7 +97,7 @@ from
         , (profit - profit_loss) as profit
  from  cs, cr
  union all
- select /*+MAPJOIN(wr)*/'web channel' as channel
+ select 'web channel' as channel
         , ws.wp_web_page_sk as id
         , sales
         , coalesce(returns, 0) returns

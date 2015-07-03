@@ -1,6 +1,10 @@
+
+
+
+
 with sr_items as
  (select
-        /*+MAPJOIN(item,date_dim)*/
+        
         i_item_id item_id,
         sum(sr_return_quantity) sr_item_qty
  from store_returns,
@@ -19,7 +23,7 @@ with sr_items as
 
 with cr_items as
  (select
-        /*+MAPJOIN(item,date_dim)*/
+        
         i_item_id item_id,
         sum(cr_return_quantity) cr_item_qty
  from catalog_returns,
@@ -38,7 +42,7 @@ with cr_items as
 
 with wr_items as
  (select 
-        /*+MAPJOIN(item,date_dim)*/
+        
         i_item_id item_id,
         sum(wr_return_quantity) wr_item_qty
  from web_returns,
@@ -56,7 +60,7 @@ with wr_items as
  group by i_item_id)
 
  select 
-        /*+MAPJOIN(sr_items,cr_items)*/
+        
         sr_items.item_id
        ,sr_item_qty
        ,sr_item_qty/(sr_item_qty+cr_item_qty+wr_item_qty)/3.0 * 100 sr_dev
@@ -73,5 +77,9 @@ with wr_items as
  order by sr_items.item_id
          ,sr_item_qty
  limit 100
+
+
+
+
 
 

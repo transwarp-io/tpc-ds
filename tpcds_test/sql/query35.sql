@@ -1,4 +1,6 @@
- select
+
+
+select
   ca_state,
   cd_gender,
   cd_marital_status,
@@ -23,7 +25,7 @@
   c.c_current_addr_sk = ca.ca_address_sk and
   cd_demo_sk = c.c_current_cdemo_sk
   and
-  exists (select *
+  exists (select 1 
           from store_sales ss,date_dim dd1
           where c.c_customer_sk = ss.ss_customer_sk and
                 ss.ss_sold_date_sk = dd1.d_date_sk and

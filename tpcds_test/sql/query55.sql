@@ -1,5 +1,5 @@
 
-select /*+ MAPJOIN(date_dim, item) */
+select 
         i_brand_id as brand_id, i_brand as brand,
  	sum(store_sales.ss_ext_sales_price) ext_price
  from date_dim

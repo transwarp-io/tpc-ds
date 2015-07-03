@@ -1,20 +1,30 @@
+
 select  count(*) from (
-    select /*+MAPJOIN(date_dim)*/  distinct c_last_name, c_first_name, d_date
+    select c_last_name, c_first_name, d_date
+    from
+    (select   distinct c_last_name, c_first_name, d_date
     from store_sales, date_dim, customer
           where store_sales.ss_sold_date_sk = date_dim.d_date_sk
       and store_sales.ss_customer_sk = customer.c_customer_sk
-      and d_month_seq between 1212 and 1212 + 11
+      and d_month_seq between 1212 and 1212 + 11) x
+    group by c_last_name, c_first_name, d_date
   intersect
-    select /*+MAPJOIN(date_dim)*/ distinct c_last_name, c_first_name, d_date
+    select c_last_name, c_first_name, d_date
+    from
+    (select  distinct c_last_name, c_first_name, d_date
     from catalog_sales, date_dim, customer
           where catalog_sales.cs_sold_date_sk = date_dim.d_date_sk
       and catalog_sales.cs_bill_customer_sk = customer.c_customer_sk
-      and d_month_seq between 1212 and 1212 + 11
+      and d_month_seq between 1212 and 1212 + 11) y
+    group by c_last_name, c_first_name, d_date
   intersect
-    select /*+MAPJOIN(date_dim)*/ distinct c_last_name, c_first_name, d_date
+    select c_last_name, c_first_name, d_date
+    from
+    (select  distinct c_last_name, c_first_name, d_date
     from web_sales, date_dim, customer
           where web_sales.ws_sold_date_sk = date_dim.d_date_sk
       and web_sales.ws_bill_customer_sk = customer.c_customer_sk
-      and d_month_seq between 1212 and 1212 + 11
+      and d_month_seq between 1212 and 1212 + 11) z
+    group by c_last_name, c_first_name, d_date
 ) hot_cust
 limit 100;

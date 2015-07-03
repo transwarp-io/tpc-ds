@@ -1,5 +1,6 @@
+
 with v1 as(
- select /*+MAPJOIN(date_dim, call_center, item)*/ i_category, i_brand,
+ select  i_category, i_brand,
         cc_name,
         d_year, d_moy,
         sum(cs_sales_price) sum_sales,
